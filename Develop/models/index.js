@@ -4,6 +4,8 @@ const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
+//These associations define the relationships between the tables
+
 // Products belongsTo Category
 Product.belongsTo(Category, {
   foreignKey: 'category_id',
@@ -23,7 +25,7 @@ Product.belongsToMany(Tag, {
     unique: false
   },
 //Defining an alias for when data is retrieved
-  as: 'product_tags'
+  // as: 'product_tags'
 });
 
 // Tags belongToMany Products (through ProductTag)
